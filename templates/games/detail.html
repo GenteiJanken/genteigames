@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load markup %}
+
+{% block title %}{{ game.name }}{% endblock %}
+
+{% block content %}
+<div class="game">
+	
+<h1>{{ game.name }}</h1>
+    <img src="{{ game.image.url }}">
+
+{{ game.details | markdown}}
+
+<h2>Links</h2>
+{% for res in resources %}
+<div class="left">{{res.name}}</div>
+<div class="right"><a href="{{res.url}}">
+  {% if res.file %}Download{% else %}View{% endif %}
+</a></div>
+{% endfor %}
+ 
+</div>
+
+{% endblock %}

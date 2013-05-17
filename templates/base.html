@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Gentei Games - {% block title %}{% endblock %}</title>
+    <link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico" />
+    <link href='{{STATIC_URL}}style.css' rel='stylesheet' type='text/css'>
+	{% load markup %}
+    <!-- fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+
+    <div id="container">
+      <nav>
+        <ul>
+          <li><a href="/">Blog</a></li>
+          <li><a href="/games">Games</a></li>
+          <li><a href="/about">Contact</a></li>
+        </ul>
+      </nav>
+      <article id="content">
+        {% block content %}{% endblock %}
+      </article>
+       <footer>
+        &copy; Josh Douglass-Molloy {% now "Y" %}.
+      </footer>
+    </div>
+  </body>
+</html>
